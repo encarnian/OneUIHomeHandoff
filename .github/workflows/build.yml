@@ -21,7 +21,7 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Install pinned Android SDK components
-        run: sdkmanager 'platforms;android-36' 'build-tools;36.0.0'
+        run: python3 tools/bootstrap_android_sdk.py
       - name: Build unsigned inspection artifact
         run: ./build.sh --unsigned
       - name: Run host checks

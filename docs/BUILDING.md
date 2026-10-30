@@ -12,6 +12,8 @@ python3 tools/audit_release.py --apk build/OneUIHomeHandoff-1.2.0.unsigned.apk
 
 The script verifies the Xposed API 82 JAR against SHA-256 `f48c635f1c7469fdec0e00ad2ea0b7a6b2f5b55065784a35b7ca3a84615e8e25`. That JAR is compile-only and is not packaged in the APK or source release. APK ZIP timestamps and attributes are normalized before alignment/signing. Exact tool versions still matter for byte-for-byte comparisons.
 
+For clean Linux CI, `tools/bootstrap_android_sdk.py` downloads Google's command-line tools 19.0, checks the pinned SHA-256 before extraction, rejects unsafe archive paths/symlinks and installs only platform 36 and build-tools 36.0.0. The bootstrap is a build-time operation; it is not included or executed by the module app. It uses a temporary SDK directory and makes that SDK available to later GitHub Actions steps.
+
 `--debug` creates a local debug key under ignored build output. Debug builds are not signed by the published release key.
 
 For `--release`, keep a private keystore **outside** this checkout and provide the following environment variables through a local secret store:
