@@ -40,8 +40,6 @@ Other One UI Home builds remain inactive. Phone models, firmware fingerprints an
 
 6. Open the module settings and keep **Enable handoff** on. **Closing duration** is adjustable from 100–175%; 100% is the native pace. The spring-based duration is approximate.
 
-Do not enable another module that modifies the same handoff at the same time. The public app ID is `io.github.encarnian.oneuihomehandoff`; builds with a different app ID are separate applications. Disable an older experimental handoff module before enabling this one.
-
 To undo the hook behavior, disable the module in LSPosed and restart One UI Home. The settings switch prevents new handoff changes; existing transition cleanup still runs.
 
 ## Behavior and limits
