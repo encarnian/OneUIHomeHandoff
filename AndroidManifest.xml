@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="io.github.encarnian.oneuihomehandoff" android:versionCode="10" android:versionName="1.2.0">
+    <uses-sdk android:minSdkVersion="35" android:targetSdkVersion="35" />
+    <queries><package android:name="com.sec.android.app.launcher" /></queries>
+    <application android:label="One UI Home Handoff" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher" android:theme="@style/Theme.Handoff" android:allowBackup="false" android:fullBackupContent="false" android:dataExtractionRules="@xml/data_extraction_rules" android:supportsRtl="true">
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposeddescription" android:value="Experimental fix for One UI Home gesture handoff to third-party launchers. Vibecoded; inspect the source before enabling." />
+        <meta-data android:name="xposedminversion" android:value="82" />
+        <meta-data android:name="xposedscope" android:resource="@array/xposed_scope" />
+        <activity android:name=".SettingsActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <provider android:name=".ConfigProvider" android:authorities="io.github.encarnian.oneuihomehandoff.config" android:exported="true" />
+    </application>
+</manifest>

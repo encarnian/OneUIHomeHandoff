@@ -1,0 +1,31 @@
+name: Handoff issue
+description: Report a reproducible handoff or compatibility issue without private device data.
+body:
+  - type: markdown
+    attributes:
+      value: "This is vibecoded, experimental software. For vulnerabilities, use Security → Report a vulnerability. Do not include phone serials, private account details or full device logs."
+  - type: input
+    id: version
+    attributes:
+      label: Module version
+    validations:
+      required: true
+  - type: input
+    id: home-version
+    attributes:
+      label: One UI Home application version
+      description: Public app version only; no hardware identifier or firmware fingerprint is needed.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps and observed behavior
+      description: Include native gestures or buttons, the selected default Home launcher if relevant, and whether Recents is affected.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Optional redacted module-only log
+      description: Review before sharing. No full-device logs, credentials or personal information.
