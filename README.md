@@ -32,7 +32,7 @@ Other One UI Home builds remain inactive. Phone models, firmware fingerprints an
 2. Install **One UI Home Handoff**, then enable it in LSPosed.
 3. Select **One UI Home** (`com.sec.android.app.launcher`) as the only scope. Leave System Framework, System UI and your third-party launcher out of its scope.
 4. Set your preferred third-party launcher as the default Home app and use Samsung's native gesture navigation.
-5. Restart One UI Home once so the hooks load. With an existing working root/ADB setup:
+5. Restart One UI Home once so the hooks load. With an existing working root and adb setup:
 
    ```sh
    adb shell su -c 'killall com.sec.android.app.launcher'
